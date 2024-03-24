@@ -1,0 +1,33 @@
+@font-face {
+  font-family: Futura Bold;
+  src: url('Futura\ Bold/Futura Bold.otf') format('opentype');
+  font-style: normal;
+  font-weight: normal;
+
+}
+
+body {
+  /*background-color: #030F51;*/
+  
+}
+
+h1 {
+  font-family: 'Futura Bold';
+}
+
+.bg-1 {
+  background-color: #030F51;
+}
+
+.bg-2 {
+  background-color: #AFD5ED;
+}
+
+.bg-3 {
+  background-color: #18223C;
+}
+
+.container-fluid {
+  /*background-color: yellow;*/
+}
+
