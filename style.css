@@ -31,3 +31,8 @@ h1 {
   /*background-color: yellow;*/
 }
 
+@media (max-width: 480px) {
+  .col-sm-1 h1 {
+    padding: 0.5rem; /* Apply padding P-5 */
+  }
+}
