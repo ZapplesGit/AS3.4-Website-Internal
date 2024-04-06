@@ -5,20 +5,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link href="style.css" rel="stylesheet">
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const hamburgerMenu = document.querySelector('.hamburger-menu');
-      const mobileMenu = document.querySelector('.mobile-menu');
+    function toggleLinks(switchNum) {
+      var linksDiv = document.getElementById("links" + switchNum);
+      var toggleSwitch = document.getElementById("toggleSwitch" + switchNum);
+      
+      if (toggleSwitch.checked) {
+        linksDiv.style.display = "block";
+      } else {
+        linksDiv.style.display = "none";
+      }
+    }
 
-      hamburgerMenu.addEventListener('click', function() {
-        mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
-      });
-    });
+    function scrollToForm() {
+    var formElement = document.getElementById("formSection");
+    var yOffset = formElement.getBoundingClientRect().top + window.pageYOffset;
+
+    // Adjust yOffset to account for the height of the navbar
+    var navbarHeight = document.querySelector('.navbar').offsetHeight;
+    yOffset -= navbarHeight;
+
+    window.scrollTo({ top: yOffset, behavior: "smooth" });
+  }
   </script>
-
 </head>
 <body>
   
@@ -39,6 +50,7 @@
         </li>
       </ul>
     </div>
+    
     <div class="container text-white d-sm-none">
       <div class="d-flex align-items-center">
         <img src="images/hamburger-1.png" class="img-fluid hamburger-menu mr-3" style="height: 2em;">
@@ -58,10 +70,8 @@
         </ul>
       </div>
     </div>
-    
   </nav>
 
-  <!--Testing-->
   <div class="container-fluid text-white" style="background-image: url('images/background-1.png'); background-position: center; background-size: cover;">
     
     <div class="p-5 container text-center">
@@ -83,23 +93,74 @@
       <div class="col-sm-3 text-center">
         <img src="images/nz-esports-logo-4.png" class="img-fluid" style="height: 10em;">
       </div>
-
     </div>
 
     <div class="p-2 container text-center text-black pb-5">
-      <h1><a href="#" class="btn btn-light btn-lg" role="button" aria-pressed="true">LEARN MORE</a></h1>
+      <h1><a href="#" class="btn btn-light btn-lg" role="button" aria-pressed="true" onclick="scrollToForm()">LEARN MORE</a></h1>
     </div>
-
   </div>
 
-  <div class="container-fluid" style="background-image: url('images/paper-texture.jpg'); background-position: center; background-size: cover;">
+  <div class="container-fluid" id="formSection" style="background-image: url('images/paper-texture.jpg'); background-position: center; background-size: cover;">
 
-    <div class="text-center p-2">
-      <h5>Aidan Gould-Pretorius</h5>
+    <div class="container pt-5 p-2 text-center">
+      <h1>Digital Wellbeing Form</h1>
+      <p><br>Our form is designed to streamline your experience by offering tailored options based on your preferences. 
+        By toggling the switches, you can choose which topics interest you most, whether it's hydration and sleep, fostering banter not bullying, or practicing online etiquette. 
+        Simply activate the switches for the topics you wish to explore, and corresponding links will appear below. Navigate effortlessly through our content by interacting with the switches and accessing relevant resources with just a click. 
+        Empower yourself with valuable insights and resources to enhance your digital wellbeing journey.</p>
     </div>
     
+    <div class="container-fluid text-center justify-content-center d-flex align-items-center p-3">
+      <div class="container">
+        <div class="switch-container">
+          <h5>Hydration and Sleep</h5>
+          <p>Are you looking to optimize your health and well-being? Consider activating the 'Hydration and Sleep' switch to delve into essential practices for better sleep quality and hydration habits. Discover expert tips on improving your sleep hygiene, understanding sleep cycles, and staying properly hydrated throughout the day. With this switch, you'll gain valuable insights into fostering a balanced lifestyle, ensuring you wake up refreshed and ready to tackle the day ahead. Prioritize your wellness journey by exploring the fundamental aspects of hydration and sleep management with just a simple toggle.</p>
+          <div class="form-check form-switch d-flex justify-content-center align-items-center">
+            <input class="form-check-input" type="checkbox" id="toggleSwitch1" onchange="toggleLinks(1)">
+            <label class="form-check-label" for="toggleSwitch1"></label>
+          </div>
+        </div>
+        <div class="switch-container">
+          <h5>Banter Not Bullying</h5>
+          <p>Are you interested in fostering positive social interactions and creating a supportive online environment? Activate the 'Banter Not Bullying' switch to explore strategies for promoting healthy communication and preventing online harassment. Delve into insightful resources that emphasize the importance of respectful discourse, constructive criticism, and empathy in digital interactions. By toggling this switch, you'll gain access to valuable tools and techniques for navigating social dynamics, fostering camaraderie, and cultivating a culture of inclusivity and mutual respect. Take a proactive stance against cyberbullying and contribute to building a safer, more welcoming online community.</p>
+          <div class="form-check form-switch d-flex justify-content-center align-items-center">
+            <input class="form-check-input" type="checkbox" id="toggleSwitch2" onchange="toggleLinks(2)">
+            <label class="form-check-label" for="toggleSwitch2"></label>
+          </div>
+        </div>
+        <div class="switch-container">
+          <h5>Online Etiquette</h5>
+          <p>Looking to navigate the digital realm with grace and professionalism? Consider activating the 'Online Etiquette' switch to explore the principles of courteous and responsible online behavior. Dive into a wealth of resources covering topics such as netiquette guidelines, digital communication best practices, and navigating social media with tact and diplomacy. By toggling this switch, you'll gain valuable insights into maintaining a positive online presence, building meaningful connections, and avoiding common pitfalls in virtual interactions. Elevate your online persona and enhance your digital footprint by embracing the principles of online etiquette. Choose this switch to cultivate a reputation for integrity, respect, and authenticity in your online interactions.</p>
+          <div class="form-check form-switch d-flex justify-content-center align-items-center">
+            <input class="form-check-input" type="checkbox" id="toggleSwitch3" onchange="toggleLinks(3)">
+            <label class="form-check-label" for="toggleSwitch3"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center justify-content-center d-flex align-items-center p-3">
+      <div class="col-sm-2">
+        <div id="links1" style="display:none;">
+          <button type="button" class="btn btn-primary">Hydration and Sleep</button>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div id="links2" style="display:none;">
+          <button type="button" class="btn btn-primary">Banter Not Bullying</button>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div id="links3" style="display:none;">
+          <button type="button" class="btn btn-primary">Online Etiquette</button>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <div class="text-center p-2 bg-1 text-white">
+    <h5>Aidan Gould-Pretorius</h5>
+  </div>
 
 
 </body>
