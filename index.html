@@ -8,17 +8,52 @@
   <link href="style.css" rel="stylesheet">
 
   <script>
-    function toggleLinks(switchNum) {
-      var linksDiv = document.getElementById("links" + switchNum);
-      var toggleSwitch = document.getElementById("toggleSwitch" + switchNum);
-      
-      if (toggleSwitch.checked) {
-        linksDiv.style.display = "block";
-      } else {
-        linksDiv.style.display = "none";
-      }
+  function toggleLinks() {
+    var linksDiv1 = document.getElementById("links1");
+    var linksDiv2 = document.getElementById("links2");
+    var linksDiv3 = document.getElementById("links3");
+    var linksDiv4 = document.getElementById("links4");
+    var linksDiv5 = document.getElementById("links5");
+    var linksDiv6 = document.getElementById("links6");
+    var linksDiv7 = document.getElementById("links7");
+    var linksDiv8 = document.getElementById("links8");
+    var linksDiv9 = document.getElementById("links9");
+    var toggleSwitch1 = document.getElementById("toggleSwitch1");
+    var toggleSwitch2 = document.getElementById("toggleSwitch2");
+    var toggleSwitch3 = document.getElementById("toggleSwitch3");
+    var toggleSwitch4 = document.getElementById("toggleSwitch4");
+    var toggleSwitch5 = document.getElementById("toggleSwitch5");
+    var toggleSwitch6 = document.getElementById("toggleSwitch6");
+    var toggleSwitch7 = document.getElementById("toggleSwitch7");
+    var toggleSwitch8 = document.getElementById("toggleSwitch8");
+    var toggleSwitch9 = document.getElementById("toggleSwitch9");
+
+    if (toggleSwitch1.checked && toggleSwitch2.checked && toggleSwitch3.checked) {
+      // Show the combined link when all switches are selected
+      linksDiv1.style.display = "block";
+    } else {
+      // Hide all links otherwise
+      linksDiv1.style.display = "none";
     }
 
+    if (toggleSwitch4.checked && toggleSwitch5.checked && toggleSwitch6.checked) {
+      // Show the combined link when all switches are selected
+      linksDiv2.style.display = "block";
+    } else {
+      // Hide all links otherwise
+      linksDiv2.style.display = "none";
+    }
+
+    if (toggleSwitch7.checked && toggleSwitch8.checked && toggleSwitch9.checked) {
+      // Show the combined link when all switches are selected
+      linksDiv3.style.display = "block";
+    } else {
+      // Hide all links otherwise
+      linksDiv3.style.display = "none";
+    }
+
+  }
+  
     function scrollToForm() {
     var formElement = document.getElementById("formSection");
     var yOffset = formElement.getBoundingClientRect().top + window.pageYOffset;
@@ -103,58 +138,99 @@
 
     <div class="container pt-5 p-2 text-center">
       <h1>Digital Wellbeing Form</h1>
-      <p><br>Our form is designed to streamline your experience by offering tailored options based on your preferences. 
-        By toggling the switches, you can choose which topics interest you most, whether it's hydration and sleep, fostering banter not bullying, or practicing online etiquette. 
-        Simply activate the switches for the topics you wish to explore, and corresponding links will appear below. Navigate effortlessly through our content by interacting with the switches and accessing relevant resources with just a click. 
-        Empower yourself with valuable insights and resources to enhance your digital wellbeing journey.</p>
+      <p><br>Our form is crafted to personalize your experience by aligning with your unique needs and preferences. By answering questions related to hydration and sleep, fostering banter not bullying, and practicing online etiquette, 
+        you can tailor your exploration to what resonates most with you. Simply toggle the switches that reflect your experiences and interests, and relevant links will dynamically appear below. Effortlessly navigate through our content, 
+        empowering yourself with valuable insights and resources curated to enhance your digital wellbeing journey.</p>
     </div>
     
     <div class="container-fluid text-center justify-content-center d-flex align-items-center p-3">
       <div class="container">
-        <div class="switch-container">
-          <h5>Hydration and Sleep</h5>
-          <p>Are you looking to optimize your health and well-being? Consider activating the 'Hydration and Sleep' switch to delve into essential practices for better sleep quality and hydration habits. Discover expert tips on improving your sleep hygiene, understanding sleep cycles, and staying properly hydrated throughout the day. With this switch, you'll gain valuable insights into fostering a balanced lifestyle, ensuring you wake up refreshed and ready to tackle the day ahead. Prioritize your wellness journey by exploring the fundamental aspects of hydration and sleep management with just a simple toggle.</p>
-          <div class="form-check form-switch d-flex justify-content-center align-items-center">
-            <input class="form-check-input" type="checkbox" id="toggleSwitch1" onchange="toggleLinks(1)">
-            <label class="form-check-label" for="toggleSwitch1"></label>
-          </div>
-        </div>
-        <div class="switch-container">
-          <h5>Banter Not Bullying</h5>
-          <p>Are you interested in fostering positive social interactions and creating a supportive online environment? Activate the 'Banter Not Bullying' switch to explore strategies for promoting healthy communication and preventing online harassment. Delve into insightful resources that emphasize the importance of respectful discourse, constructive criticism, and empathy in digital interactions. By toggling this switch, you'll gain access to valuable tools and techniques for navigating social dynamics, fostering camaraderie, and cultivating a culture of inclusivity and mutual respect. Take a proactive stance against cyberbullying and contribute to building a safer, more welcoming online community.</p>
-          <div class="form-check form-switch d-flex justify-content-center align-items-center">
-            <input class="form-check-input" type="checkbox" id="toggleSwitch2" onchange="toggleLinks(2)">
-            <label class="form-check-label" for="toggleSwitch2"></label>
-          </div>
-        </div>
-        <div class="switch-container">
-          <h5>Online Etiquette</h5>
-          <p>Looking to navigate the digital realm with grace and professionalism? Consider activating the 'Online Etiquette' switch to explore the principles of courteous and responsible online behavior. Dive into a wealth of resources covering topics such as netiquette guidelines, digital communication best practices, and navigating social media with tact and diplomacy. By toggling this switch, you'll gain valuable insights into maintaining a positive online presence, building meaningful connections, and avoiding common pitfalls in virtual interactions. Elevate your online persona and enhance your digital footprint by embracing the principles of online etiquette. Choose this switch to cultivate a reputation for integrity, respect, and authenticity in your online interactions.</p>
-          <div class="form-check form-switch d-flex justify-content-center align-items-center">
-            <input class="form-check-input" type="checkbox" id="toggleSwitch3" onchange="toggleLinks(3)">
-            <label class="form-check-label" for="toggleSwitch3"></label>
-          </div>
-        </div>
+
+<div class="switch-container">
+  <p>Do you struggle to fall asleep at night?</p>
+  <div class="form-check form-switch d-flex justify-content-center align-items-center">
+    <input class="form-check-input" type="checkbox" id="toggleSwitch1" onchange="toggleLinks(1)">
+    <label class="form-check-label" for="toggleSwitch1"></label>
+  </div>
+</div>
+<div class="switch-container">
+  <p>Are you often fatigued or lacking energy during the day?</p>
+  <div class="form-check form-switch d-flex justify-content-center align-items-center">
+    <input class="form-check-input" type="checkbox" id="toggleSwitch2" onchange="toggleLinks(2)">
+    <label class="form-check-label" for="toggleSwitch2"></label>
+  </div>
+</div>
+<div class="switch-container">
+  <p>Do you find it difficult to maintain a consistent sleep schedule?</p>
+  <div class="form-check form-switch d-flex justify-content-center align-items-center">
+    <input class="form-check-input" type="checkbox" id="toggleSwitch3" onchange="toggleLinks(3)">
+    <label class="form-check-label" for="toggleSwitch3"></label>
+  </div>
+</div>
+<div class="switch-container">
+  <p>Have you ever experienced discomfort or negativity from online interactions?</p>
+  <div class="form-check form-switch d-flex justify-content-center align-items-center">
+    <input class="form-check-input" type="checkbox" id="toggleSwitch4" onchange="toggleLinks(4)">
+    <label class="form-check-label" for="toggleSwitch4"></label>
+  </div>
+</div>
+<div class="switch-container">
+  <p>Do you feel uncertain about how to handle online disagreements or conflicts?</p>
+  <div class="form-check form-switch d-flex justify-content-center align-items-center">
+    <input class="form-check-input" type="checkbox" id="toggleSwitch5" onchange="toggleLinks(5)">
+    <label class="form-check-label" for="toggleSwitch5"></label>
+  </div>
+</div>
+<div class="switch-container">
+  <p>Are you interested in promoting positivity and inclusivity in digital communities?</p>
+  <div class="form-check form-switch d-flex justify-content-center align-items-center">
+    <input class="form-check-input" type="checkbox" id="toggleSwitch6" onchange="toggleLinks(6)">
+    <label class="form-check-label" for="toggleSwitch6"></label>
+  </div>
+</div>
+<div class="switch-container">
+  <p>Do you find it challenging to communicate effectively in online forums or social media?</p>
+  <div class="form-check form-switch d-flex justify-content-center align-items-center">
+    <input class="form-check-input" type="checkbox" id="toggleSwitch7" onchange="toggleLinks(7)">
+    <label class="form-check-label" for="toggleSwitch7"></label>
+  </div>
+</div>
+<div class="switch-container">
+  <p>Are you unsure about the appropriate way to engage with others online?</p>
+  <div class="form-check form-switch d-flex justify-content-center align-items-center">
+    <input class="form-check-input" type="checkbox" id="toggleSwitch8" onchange="toggleLinks(8)">
+    <label class="form-check-label" for="toggleSwitch8"></label>
+  </div>
+</div>
+<div class="switch-container">
+  <p>Would you like to improve your online presence and professionalism?</p>
+  <div class="form-check form-switch d-flex justify-content-center align-items-center">
+    <input class="form-check-input" type="checkbox" id="toggleSwitch9" onchange="toggleLinks(9)">
+    <label class="form-check-label" for="toggleSwitch9"></label>
+  </div>
+</div>
+        
       </div>
     </div>
 
     <div class="row text-center justify-content-center d-flex align-items-center p-3">
       <div class="col-sm-2 p-1">
         <div id="links1" style="display:none;">
-          <button type="button" class="btn btn-primary">Hydration and Sleep</button>
+          <a href="hydration-sleep.html" class="btn btn-primary">Hydration and Sleep</a>
         </div>
       </div>
       <div class="col-sm-2 p-1">
         <div id="links2" style="display:none;">
-          <button type="button" class="btn btn-primary">Banter Not Bullying</button>
+          <a href="banter-bullying.html" class="btn btn-primary">Banter Not Bullying</a>
         </div>
       </div>
       <div class="col-sm-2 p-1">
         <div id="links3" style="display:none;">
-          <button type="button" class="btn btn-primary">Online Etiquette</button>
+          <a href="" class="btn btn-primary">Online Etiquette</a>
         </div>
       </div>
     </div>
+    
   </div>
 
   <div class="text-center p-2 bg-1 text-white">
