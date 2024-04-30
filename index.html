@@ -8,6 +8,7 @@
   <link href="style.css" rel="stylesheet">
 
   <script>
+  // Function that displays links when switches are pressed
   function toggleLinks() {
     var linksDiv1 = document.getElementById("links1");
     var linksDiv2 = document.getElementById("links2");
@@ -29,31 +30,28 @@
     var toggleSwitch9 = document.getElementById("toggleSwitch9");
 
     if (toggleSwitch1.checked && toggleSwitch2.checked && toggleSwitch3.checked) {
-      // Show the combined link when all switches are selected
       linksDiv1.style.display = "block";
+      linksDiv1.classList.add("visible");
     } else {
-      // Hide all links otherwise
-      linksDiv1.style.display = "none";
+      linksDiv1.classList.remove("visible");
     }
 
     if (toggleSwitch4.checked && toggleSwitch5.checked && toggleSwitch6.checked) {
-      // Show the combined link when all switches are selected
       linksDiv2.style.display = "block";
+      linksDiv2.classList.add("visible");
     } else {
-      // Hide all links otherwise
-      linksDiv2.style.display = "none";
+      linksDiv2.classList.remove("visible");
     }
 
     if (toggleSwitch7.checked && toggleSwitch8.checked && toggleSwitch9.checked) {
-      // Show the combined link when all switches are selected
       linksDiv3.style.display = "block";
+      linksDiv3.classList.add("visible");
     } else {
-      // Hide all links otherwise
-      linksDiv3.style.display = "none";
+      linksDiv3.classList.remove("visible");
     }
 
   }
-  
+    // Function that scrolls down the page when the button is pressed
     function scrollToForm() {
     var formElement = document.getElementById("formSection");
     var yOffset = formElement.getBoundingClientRect().top + window.pageYOffset;
@@ -63,10 +61,21 @@
 
     window.scrollTo({ top: yOffset, behavior: "smooth" });
   }
+
+  // Function that displays the hamburger menu when pressed
+  function toggleMobileMenu() {
+      var mobileMenu = document.getElementById("mobileMenu");
+      if (mobileMenu.style.display === "block") {
+        mobileMenu.style.display = "none";
+      } else {
+        mobileMenu.style.display = "block";
+      }
+    }
   </script>
 </head>
 <body>
   
+  <!-- Navigation -->
   <nav class="navbar navbar-expand-sm bg-1 navbar-dark"> 
     <div class="d-none d-sm-block container-fluid">
       <ul class="navbar-nav">
@@ -85,27 +94,34 @@
       </ul>
     </div>
     
+    <!-- Navigation for smaller screens -->
     <div class="container text-white d-sm-none">
       <div class="d-flex align-items-center">
-        <img src="images/hamburger-1.png" class="img-fluid hamburger-menu mr-3" style="height: 2em;">
-        <ul class="navbar-nav mobile-menu" style="display: none;">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="hydration-sleep.html">Hydration and Sleep</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="banter-bullying.html">Banter Not Bullying</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Online Etiquette</a>
-          </li>
-        </ul>
+        <button class="navbar-toggler" type="button" onclick="toggleMobileMenu()">
+          <img src="images/hamburger-2.png" alt="Menu" width="30">
+        </button>
       </div>
     </div>
   </nav>
+  
+  <div id="mobileMenu" class="container-fluid bg-1 d-sm-none navbar-dark" style="display: none;">
+    <ul class="navbar-nav mobile-menu">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="hydration-sleep.html">Hydration and Sleep</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="banter-bullying.html">Banter Not Bullying</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Online Etiquette</a>
+      </li>
+    </ul>
+  </div>
 
+  <!-- Header / Title -->
   <div class="container-fluid text-white" style="background-image: url('images/background-tiny.png'); background-position: center; background-size: cover;">
     
     <div class="p-5 container text-center">
@@ -119,11 +135,9 @@
       <div class="col-sm-3 text-center">
         <img src="images/shield-tiny.png" class="img-fluid" style="height:10em;">
       </div>
-
       <div class="col-sm-1">
         <h1>X</h1>
       </div>
-
       <div class="col-sm-3 text-center">
         <img src="images/nz-esports-tiny.png" class="img-fluid" style="height: 10em;">
       </div>
@@ -134,6 +148,8 @@
     </div>
   </div>
 
+  <!-- questionnaire form -->
+
   <div class="container-fluid" id="formSection" style="background-image: url('images/paper-tiny.jpg'); background-position: center; background-size: cover;">
 
     <div class="container pt-5 p-2 text-center">
@@ -143,95 +159,123 @@
         empowering yourself with valuable insights and resources curated to enhance your digital wellbeing journey.</p>
     </div>
     
+    <!-- Switches that determine what links are displayed -->
+
     <div class="container-fluid text-center justify-content-center d-flex align-items-center p-3">
       <div class="container">
-
-<div class="switch-container">
-  <p>Do you struggle to fall asleep at night?</p>
-  <div class="form-check form-switch d-flex justify-content-center align-items-center">
-    <input class="form-check-input" type="checkbox" id="toggleSwitch1" onchange="toggleLinks(1)">
-    <label class="form-check-label" for="toggleSwitch1"></label>
-  </div>
-</div>
-<div class="switch-container">
-  <p>Are you often fatigued or lacking energy during the day?</p>
-  <div class="form-check form-switch d-flex justify-content-center align-items-center">
-    <input class="form-check-input" type="checkbox" id="toggleSwitch2" onchange="toggleLinks(2)">
-    <label class="form-check-label" for="toggleSwitch2"></label>
-  </div>
-</div>
-<div class="switch-container">
-  <p>Do you find it difficult to maintain a consistent sleep schedule?</p>
-  <div class="form-check form-switch d-flex justify-content-center align-items-center">
-    <input class="form-check-input" type="checkbox" id="toggleSwitch3" onchange="toggleLinks(3)">
-    <label class="form-check-label" for="toggleSwitch3"></label>
-  </div>
-</div>
-<div class="switch-container">
-  <p>Have you ever experienced discomfort or negativity from online interactions?</p>
-  <div class="form-check form-switch d-flex justify-content-center align-items-center">
-    <input class="form-check-input" type="checkbox" id="toggleSwitch4" onchange="toggleLinks(4)">
-    <label class="form-check-label" for="toggleSwitch4"></label>
-  </div>
-</div>
-<div class="switch-container">
-  <p>Do you feel uncertain about how to handle online disagreements or conflicts?</p>
-  <div class="form-check form-switch d-flex justify-content-center align-items-center">
-    <input class="form-check-input" type="checkbox" id="toggleSwitch5" onchange="toggleLinks(5)">
-    <label class="form-check-label" for="toggleSwitch5"></label>
-  </div>
-</div>
-<div class="switch-container">
-  <p>Are you interested in promoting positivity and inclusivity in digital communities?</p>
-  <div class="form-check form-switch d-flex justify-content-center align-items-center">
-    <input class="form-check-input" type="checkbox" id="toggleSwitch6" onchange="toggleLinks(6)">
-    <label class="form-check-label" for="toggleSwitch6"></label>
-  </div>
-</div>
-<div class="switch-container">
-  <p>Do you find it challenging to communicate effectively in online forums or social media?</p>
-  <div class="form-check form-switch d-flex justify-content-center align-items-center">
-    <input class="form-check-input" type="checkbox" id="toggleSwitch7" onchange="toggleLinks(7)">
-    <label class="form-check-label" for="toggleSwitch7"></label>
-  </div>
-</div>
-<div class="switch-container">
-  <p>Are you unsure about the appropriate way to engage with others online?</p>
-  <div class="form-check form-switch d-flex justify-content-center align-items-center">
-    <input class="form-check-input" type="checkbox" id="toggleSwitch8" onchange="toggleLinks(8)">
-    <label class="form-check-label" for="toggleSwitch8"></label>
-  </div>
-</div>
-<div class="switch-container">
-  <p>Would you like to improve your online presence and professionalism?</p>
-  <div class="form-check form-switch d-flex justify-content-center align-items-center">
-    <input class="form-check-input" type="checkbox" id="toggleSwitch9" onchange="toggleLinks(9)">
-    <label class="form-check-label" for="toggleSwitch9"></label>
-  </div>
-</div>
         
-      </div>
-    </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+              <p class="text-white">Do you struggle to fall asleep at night?</p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch1" onchange="toggleLinks(1)">
+                <label class="form-check-label" for="toggleSwitch1"></label>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+              <p class="text-white">Are you often fatigued or lacking energy during the day?</p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch2" onchange="toggleLinks(2)">
+                <label class="form-check-label" for="toggleSwitch2"></label>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+              <p class="text-white">Do you find it difficult to maintain a consistent sleep schedule?</p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch3" onchange="toggleLinks(3)">
+                <label class="form-check-label" for="toggleSwitch3"></label>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+              <p class="text-white">Have you ever experienced discomfort or negativity from online interactions?</p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch4" onchange="toggleLinks(4)">
+                <label class="form-check-label" for="toggleSwitch4"></label>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+              <p class="text-white">Do you feel uncertain about how to handle online disagreements or conflicts?</p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch5" onchange="toggleLinks(5)">
+                <label class="form-check-label" for="toggleSwitch5"></label>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+              <p class="text-white">Are you interested in promoting positivity and inclusivity in digital communities?</p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch6" onchange="toggleLinks(6)">
+                <label class="form-check-label" for="toggleSwitch6"></label>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+              <p class="text-white">Do you find it hard to communicate effectively in online forums or social media?</p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch7" onchange="toggleLinks(7)">
+                <label class="form-check-label" for="toggleSwitch7"></label>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+              <p class="text-white">Are you unsure about the appropriate way to engage with others online?</p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch8" onchange="toggleLinks(8)">
+                <label class="form-check-label" for="toggleSwitch8"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-4">
+          <div class="col text-center">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+              <p class="text-white">Would you like to improve your online presence and professionalism?</p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch9" onchange="toggleLinks(9)">
+                <label class="form-check-label" for="toggleSwitch9"></label>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <div class="row text-center justify-content-center d-flex align-items-center p-3">
-      <div class="col-sm-2 p-1">
-        <div id="links1" style="display:none;">
-          <a href="hydration-sleep.html" class="btn btn-primary">Hydration and Sleep</a>
-        </div>
-      </div>
-      <div class="col-sm-2 p-1">
-        <div id="links2" style="display:none;">
-          <a href="banter-bullying.html" class="btn btn-primary">Banter Not Bullying</a>
-        </div>
-      </div>
-      <div class="col-sm-2 p-1">
-        <div id="links3" style="display:none;">
-          <a href="" class="btn btn-primary">Online Etiquette</a>
-        </div>
       </div>
     </div>
     
+    <!-- Links to pages displayed as form results -->
+
+  <div class="row text-center justify-content-center d-flex align-items-center p-4">
+    <div class="col-sm-2 p-1">
+      <div id="links1" class="fade-in">
+        <a href="hydration-sleep.html" class="btn btn-secondary btn-lg visible">Hydration and Sleep</a>
+      </div>
+    </div>
+    <div class="col-sm-2 p-1">
+      <div id="links2" class="fade-in">
+        <a href="banter-bullying.html" class="btn btn-secondary btn-lg visible">Banter Not Bullying</a>
+      </div>
+    </div>
+    <div class="col-sm-2 p-1">
+      <div id="links3" class="fade-in">
+        <a href="" class="btn btn-secondary btn-lg visible">Online Etiquette</a>
+      </div>
+    </div>
   </div>
+    
+  </div>
+
+  <!-- Footer -->
 
   <div class="text-center p-2 bg-1 text-white">
     <h5>Aidan Gould-Pretorius</h5>
