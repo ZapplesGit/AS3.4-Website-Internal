@@ -6,70 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
-
-  <script>
-  function toggleLinks() {
-    var linksDiv1 = document.getElementById("links1");
-    var linksDiv2 = document.getElementById("links2");
-    var linksDiv3 = document.getElementById("links3");
-    var linksDiv4 = document.getElementById("links4");
-    var linksDiv5 = document.getElementById("links5");
-    var linksDiv6 = document.getElementById("links6");
-    var linksDiv7 = document.getElementById("links7");
-    var linksDiv8 = document.getElementById("links8");
-    var linksDiv9 = document.getElementById("links9");
-    var toggleSwitch1 = document.getElementById("toggleSwitch1");
-    var toggleSwitch2 = document.getElementById("toggleSwitch2");
-    var toggleSwitch3 = document.getElementById("toggleSwitch3");
-    var toggleSwitch4 = document.getElementById("toggleSwitch4");
-    var toggleSwitch5 = document.getElementById("toggleSwitch5");
-    var toggleSwitch6 = document.getElementById("toggleSwitch6");
-    var toggleSwitch7 = document.getElementById("toggleSwitch7");
-    var toggleSwitch8 = document.getElementById("toggleSwitch8");
-    var toggleSwitch9 = document.getElementById("toggleSwitch9");
-
-    if (toggleSwitch1.checked && toggleSwitch2.checked && toggleSwitch3.checked) {
-      linksDiv1.style.display = "block";
-      linksDiv1.classList.add("visible");
-    } else {
-      linksDiv1.classList.remove("visible");
-    }
-
-    if (toggleSwitch4.checked && toggleSwitch5.checked && toggleSwitch6.checked) {
-      linksDiv2.style.display = "block";
-      linksDiv2.classList.add("visible");
-    } else {
-      linksDiv2.classList.remove("visible");
-    }
-
-    if (toggleSwitch7.checked && toggleSwitch8.checked && toggleSwitch9.checked) {
-      linksDiv3.style.display = "block";
-      linksDiv3.classList.add("visible");
-    } else {
-      linksDiv3.classList.remove("visible");
-    }
-
-  }
-  
-    function scrollToForm() {
-    var formElement = document.getElementById("formSection");
-    var yOffset = formElement.getBoundingClientRect().top + window.pageYOffset;
-
-    var navbarHeight = document.querySelector('.navbar').offsetHeight;
-    yOffset -= navbarHeight;
-
-    window.scrollTo({ top: yOffset, behavior: "smooth" });
-  }
-
-  function toggleMobileMenu() {
-      var mobileMenu = document.getElementById("mobileMenu");
-      if (mobileMenu.style.display === "block") {
-        mobileMenu.style.display = "none";
-      } else {
-        mobileMenu.style.display = "block";
-      }
-    }
-  </script>
 </head>
 <body>
   
@@ -77,10 +13,10 @@
     <div class="d-none d-sm-block container-fluid">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="hydration-sleep.html">Hydration and Sleep</a>
+          <a class="nav-link active" href="hydration-sleep.html">Hydration and Sleep</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="banter-bullying.html">Banter Not Bullying</a>
@@ -93,181 +29,71 @@
     
     <div class="container text-white d-sm-none">
       <div class="d-flex align-items-center">
-        <!-- Use a button with the hamburger menu image -->
-        <button class="navbar-toggler" type="button" onclick="toggleMobileMenu()">
-          <img src="images/hamburger-2.png" alt="Menu" width="30">
-        </button>
+        <img src="images/hamburger-1.png" class="img-fluid hamburger-menu mr-3" style="height: 2em;">
+        <ul class="navbar-nav mobile-menu" style="display: none;">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="hydration-sleep.html">Hydration and Sleep</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="banter-bullying.html">Banter Not Bullying</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Online Etiquette</a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
-  
-  <!-- Mobile menu for smaller screens -->
-  <div id="mobileMenu" class="container-fluid bg-1 d-sm-none navbar-dark" style="display: none;">
-    <ul class="navbar-nav mobile-menu">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="hydration-sleep.html">Hydration and Sleep</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="banter-bullying.html">Banter Not Bullying</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Online Etiquette</a>
-      </li>
-    </ul>
-  </div>
 
   <div class="container-fluid text-white" style="background-image: url('images/background-tiny.png'); background-position: center; background-size: cover;">
     
     <div class="p-5 container text-center">
-      <h1>LEVEL UP</h1>
-      <h3>your</h3>
-      <h1>DIGITAL WELLBEING</h1>
-    </div>
-    
-    <div class="row text-center justify-content-center d-flex align-items-center p-3">
-
-      <div class="col-sm-3 text-center">
-        <img src="images/shield-tiny.png" class="img-fluid" style="height:10em;">
-      </div>
-
-      <div class="col-sm-1">
-        <h1>X</h1>
-      </div>
-
-      <div class="col-sm-3 text-center">
-        <img src="images/nz-esports-tiny.png" class="img-fluid" style="height: 10em;">
-      </div>
+      <h1>HYDRATION</h1>
+      <h3>and</h3>
+      <h1>SLEEP</h1>
     </div>
 
-    <div class="p-2 container text-center text-black pb-5">
-      <h1><a href="#" class="btn btn-light btn-lg" role="button" aria-pressed="true" onclick="scrollToForm()">LEARN MORE</a></h1>
     </div>
   </div>
+  
+  <div class="container-fluid" style="background-image: url('images/paper-tiny.jpg'); background-position: center; background-size: cover;">
 
-  <div class="container-fluid" id="formSection" style="background-image: url('images/paper-tiny.jpg'); background-position: center; background-size: cover;">
-
-    <div class="container pt-5 p-2 text-center">
-      <h1>Digital Wellbeing Form</h1>
-      <p><br>Our form is crafted to personalize your experience by aligning with your unique needs and preferences. By answering questions related to hydration and sleep, fostering banter not bullying, and practicing online etiquette, 
-        you can tailor your exploration to what resonates most with you. Simply toggle the switches that reflect your experiences and interests, and relevant links will dynamically appear below. Effortlessly navigate through our content, 
-        empowering yourself with valuable insights and resources curated to enhance your digital wellbeing journey.</p>
+    <div class="container pt-5 p-4 text-center">
+      <h1>Understanding Hydration and Sleep</h1>
+      <p class="mt-4">Proper hydration and quality sleep are essential components of a healthy lifestyle. By maintaining adequate hydration levels and prioritizing restful sleep, you can enhance your overall well-being and performance.</p>
     </div>
     
-    <div class="container-fluid text-center justify-content-center d-flex align-items-center p-3">
-      <div class="container">
-        
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
-              <p class="text-white">Do you struggle to fall asleep at night?</p>
-              <div class="form-check form-switch d-flex justify-content-center align-items-center">
-                <input class="form-check-input" type="checkbox" id="toggleSwitch1" onchange="toggleLinks(1)">
-                <label class="form-check-label" for="toggleSwitch1"></label>
-              </div>
-            </div>
+    <div class="p-2">
+      <div class="container text-white p-3 rounded" style="background-color: rgba(0, 0, 0, 0.5);">
+        <div class="row text-center justify-content-center d-flex align-items-center">
+          <div class="col-md-4 text-center">
+            <img src="images/ai-drinking.png" class="img-fluid rounded" alt="Hydration Image" style="height: 20em;">
           </div>
-          <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
-              <p class="text-white">Are you often fatigued or lacking energy during the day?</p>
-              <div class="form-check form-switch d-flex justify-content-center align-items-center">
-                <input class="form-check-input" type="checkbox" id="toggleSwitch2" onchange="toggleLinks(2)">
-                <label class="form-check-label" for="toggleSwitch2"></label>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
-              <p class="text-white">Do you find it difficult to maintain a consistent sleep schedule?</p>
-              <div class="form-check form-switch d-flex justify-content-center align-items-center">
-                <input class="form-check-input" type="checkbox" id="toggleSwitch3" onchange="toggleLinks(3)">
-                <label class="form-check-label" for="toggleSwitch3"></label>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
-              <p class="text-white">Have you ever experienced discomfort or negativity from online interactions?</p>
-              <div class="form-check form-switch d-flex justify-content-center align-items-center">
-                <input class="form-check-input" type="checkbox" id="toggleSwitch4" onchange="toggleLinks(4)">
-                <label class="form-check-label" for="toggleSwitch4"></label>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
-              <p class="text-white">Do you feel uncertain about how to handle online disagreements or conflicts?</p>
-              <div class="form-check form-switch d-flex justify-content-center align-items-center">
-                <input class="form-check-input" type="checkbox" id="toggleSwitch5" onchange="toggleLinks(5)">
-                <label class="form-check-label" for="toggleSwitch5"></label>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
-              <p class="text-white">Are you interested in promoting positivity and inclusivity in digital communities?</p>
-              <div class="form-check form-switch d-flex justify-content-center align-items-center">
-                <input class="form-check-input" type="checkbox" id="toggleSwitch6" onchange="toggleLinks(6)">
-                <label class="form-check-label" for="toggleSwitch6"></label>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
-              <p class="text-white">Do you find it hard to communicate effectively in online forums or social media?</p>
-              <div class="form-check form-switch d-flex justify-content-center align-items-center">
-                <input class="form-check-input" type="checkbox" id="toggleSwitch7" onchange="toggleLinks(7)">
-                <label class="form-check-label" for="toggleSwitch7"></label>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
-              <p class="text-white">Are you unsure about the appropriate way to engage with others online?</p>
-              <div class="form-check form-switch d-flex justify-content-center align-items-center">
-                <input class="form-check-input" type="checkbox" id="toggleSwitch8" onchange="toggleLinks(8)">
-                <label class="form-check-label" for="toggleSwitch8"></label>
-              </div>
-            </div>
+          <div class="col-md-6">
+            <p class="lead fw-bold">Maintaining proper hydration is crucial for overall health and well-being. Our bodies rely on water to perform essential functions, such as regulating temperature, lubricating joints, and delivering nutrients to cells. Dehydration can lead to fatigue, headaches, and decreased cognitive function. Explore our resources to learn how to stay hydrated throughout the day, understand the signs of dehydration, and discover hydrating foods and beverages to incorporate into your diet.</p>
           </div>
         </div>
-        <div class="row pt-4">
-          <div class="col text-center">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
-              <p class="text-white">Would you like to improve your online presence and professionalism?</p>
-              <div class="form-check form-switch d-flex justify-content-center align-items-center">
-                <input class="form-check-input" type="checkbox" id="toggleSwitch9" onchange="toggleLinks(9)">
-                <label class="form-check-label" for="toggleSwitch9"></label>
-              </div>
-            </div>
+      </div>
+    </div>
+  
+    <div class="p-4">
+      <div class="container text-white p-3 rounded" style="background-color: rgba(0, 0, 0, 0.5);">
+        <div class="row text-center justify-content-center d-flex align-items-center">
+          <div class="col-md-6 text-center">
+            <p class="lead fw-bold">Quality sleep is essential for physical and mental rejuvenation. Discover tips and techniques to improve your sleep hygiene and optimize your sleep environment. From establishing a consistent sleep schedule to creating a relaxing bedtime routine, our resources will help you develop healthy sleep habits. Learn about the importance of a comfortable mattress and pillow, the effects of blue light exposure before bedtime, and relaxation techniques to promote restful sleep.</p>
+          </div>
+          <div class="col-md-4">
+            <img src="images/ai-sleeping.png" class="img-fluid rounded" alt="Sleep Image" style="height: 20em;">
           </div>
         </div>
-
       </div>
     </div>
-    
-  <div class="row text-center justify-content-center d-flex align-items-center p-4">
-    <div class="col-sm-2 p-1">
-      <div id="links1" class="fade-in">
-        <a href="hydration-sleep.html" class="btn btn-secondary btn-lg visible">Hydration and Sleep</a>
-      </div>
-    </div>
-    <div class="col-sm-2 p-1">
-      <div id="links2" class="fade-in">
-        <a href="banter-bullying.html" class="btn btn-secondary btn-lg visible">Banter Not Bullying</a>
-      </div>
-    </div>
-    <div class="col-sm-2 p-1">
-      <div id="links3" class="fade-in">
-        <a href="" class="btn btn-secondary btn-lg visible">Online Etiquette</a>
-      </div>
-    </div>
+  
   </div>
-    
-  </div>
-
+  
   <div class="text-center p-2 bg-1 text-white">
     <h5>Aidan Gould-Pretorius</h5>
   </div>
