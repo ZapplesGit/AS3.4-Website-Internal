@@ -3,7 +3,6 @@
   src: url('Futura\ Bold/Futura Bold.otf') format('opentype');
   font-style: normal;
   font-weight: normal;
-
 }
 
 #down {
@@ -27,17 +26,6 @@ h1 {
   background-color: #18223C;
 }
 
-
-.slide-in {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-}
-.slide-in.show {
-  max-height: 500px; /* Adjust the max height as needed */
-}
-
-
 .fade-in {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -56,6 +44,13 @@ h1 {
 }
 .switch-container {
   margin-bottom: 20px;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media (max-width: 480px) {

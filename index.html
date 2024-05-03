@@ -49,7 +49,6 @@
     } else {
       linksDiv3.classList.remove("visible");
     }
-
   }
     // Function that scrolls down the page when the button is pressed
     function scrollToForm() {
@@ -78,7 +77,7 @@
     <div class="d-none d-sm-block container-fluid">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link active" href="index.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="hydration-sleep.html">Hydration and Sleep</a>
@@ -96,7 +95,7 @@
     <div class="container text-white d-sm-none">
       <div class="d-flex align-items-center">
         <button class="navbar-toggler" type="button" onclick="toggleMobileMenu()">
-          <img src="images/hamburger-2.png" alt="Menu" width="30">
+          <img src="images/hamburger-tiny.png" alt="Menu" width="30">
         </button>
       </div>
     </div>
@@ -120,12 +119,12 @@
   </div>
 
   <!-- Header / Title -->
-  <div class="container-fluid text-white" style="background-image: url('images/background-tiny.png'); background-position: center; background-size: cover;">
+  <div class="parallax container-fluid text-white" style="background-image: url('images/background-tiny.png'); background-position: center; background-size: cover;">
     
     <div class="p-5 container text-center">
-      <h1>LEVEL UP</h1>
+      <h1 class="display-5">LEVEL UP</h1>
       <h3>your</h3>
-      <h1>DIGITAL WELLBEING</h1>
+      <h1 class="display-5">DIGITAL WELLBEING</h1>
     </div>
     
     <div class="row text-center justify-content-center d-flex align-items-center p-3">
@@ -148,13 +147,10 @@
 
   <!-- questionnaire form -->
 
-  <div class="container-fluid" id="formSection" style="background-image: url('images/paper-tiny.jpg'); background-position: center; background-size: cover;">
+  <div class="parallax container-fluid" id="formSection" style="background-image: url('images/paper-tiny.jpg'); background-position: center; background-size: cover;">
 
     <div class="container pt-5 p-2 text-center">
-      <h1>Digital Wellbeing Form</h1>
-      <p><br>Our form is crafted to personalize your experience by aligning with your unique needs and preferences. By answering questions related to hydration and sleep, fostering banter not bullying, and practicing online etiquette, 
-        you can tailor your exploration to what resonates most with you. Simply toggle the switches that reflect your experiences and interests, and relevant links will dynamically appear below. Effortlessly navigate through our content, 
-        empowering yourself with valuable insights and resources curated to enhance your digital wellbeing journey.</p>
+      <h1 class="display-4">Digital Wellbeing Form</h1>
     </div>
     
     <!-- Switches that determine what links are displayed -->
@@ -162,9 +158,11 @@
     <div class="container-fluid text-center justify-content-center d-flex align-items-center p-3">
       <div class="container">
         
+        <p class="rounded text-white p-3 mt-3 mb-5" style="background-color: rgba(0, 0, 0, 0.65);">Our form is crafted to personalize your experience by aligning with your unique needs and preferences. By answering questions related to hydration and sleep, fostering banter not bullying, and practicing online etiquette, 
+          you can tailor your exploration to what resonates most with you. Simply toggle the switches that reflect your experiences and interests, and relevant links will dynamically appear below. By having three switches of a category selected, a link will appear containing information related to your answers.</p>
         <div class="row row-cols-1 row-cols-md-2 g-4">
           <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
               <p class="text-white">Do you struggle to fall asleep at night?</p>
               <div class="form-check form-switch d-flex justify-content-center align-items-center">
                 <input class="form-check-input" type="checkbox" id="toggleSwitch1" onchange="toggleLinks(1)">
@@ -173,7 +171,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
               <p class="text-white">Are you often fatigued or lacking energy during the day?</p>
               <div class="form-check form-switch d-flex justify-content-center align-items-center">
                 <input class="form-check-input" type="checkbox" id="toggleSwitch2" onchange="toggleLinks(2)">
@@ -182,7 +180,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
               <p class="text-white">Do you find it difficult to maintain a consistent sleep schedule?</p>
               <div class="form-check form-switch d-flex justify-content-center align-items-center">
                 <input class="form-check-input" type="checkbox" id="toggleSwitch3" onchange="toggleLinks(3)">
@@ -191,7 +189,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
               <p class="text-white">Have you ever experienced discomfort or negativity from online interactions?</p>
               <div class="form-check form-switch d-flex justify-content-center align-items-center">
                 <input class="form-check-input" type="checkbox" id="toggleSwitch4" onchange="toggleLinks(4)">
@@ -200,7 +198,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
               <p class="text-white">Do you feel uncertain about how to handle online disagreements or conflicts?</p>
               <div class="form-check form-switch d-flex justify-content-center align-items-center">
                 <input class="form-check-input" type="checkbox" id="toggleSwitch5" onchange="toggleLinks(5)">
@@ -209,7 +207,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
               <p class="text-white">Are you interested in promoting positivity and inclusivity in digital communities?</p>
               <div class="form-check form-switch d-flex justify-content-center align-items-center">
                 <input class="form-check-input" type="checkbox" id="toggleSwitch6" onchange="toggleLinks(6)">
@@ -218,8 +216,8 @@
             </div>
           </div>
           <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
-              <p class="text-white">Do you find it hard to communicate effectively in online forums or social media?</p>
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
+              <p class="text-white">Would you like to improve your online presence and professionalism?</p>
               <div class="form-check form-switch d-flex justify-content-center align-items-center">
                 <input class="form-check-input" type="checkbox" id="toggleSwitch7" onchange="toggleLinks(7)">
                 <label class="form-check-label" for="toggleSwitch7"></label>
@@ -227,7 +225,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
               <p class="text-white">Are you unsure about the appropriate way to engage with others online?</p>
               <div class="form-check form-switch d-flex justify-content-center align-items-center">
                 <input class="form-check-input" type="checkbox" id="toggleSwitch8" onchange="toggleLinks(8)">
@@ -238,8 +236,8 @@
         </div>
         <div class="row pt-4">
           <div class="col text-center">
-            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.5);">
-              <p class="text-white">Would you like to improve your online presence and professionalism?</p>
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
+              <p class="text-white">Do you find it hard to communicate effectively in online forums or social media?</p>
               <div class="form-check form-switch d-flex justify-content-center align-items-center">
                 <input class="form-check-input" type="checkbox" id="toggleSwitch9" onchange="toggleLinks(9)">
                 <label class="form-check-label" for="toggleSwitch9"></label>
