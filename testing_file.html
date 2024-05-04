@@ -6,9 +6,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+
   <script>
-    // Function that displays the hamburger menu when pressed
-    function toggleMobileMenu() {
+  // Function that displays links when switches are pressed
+  function toggleLinks() {
+    var linksDiv1 = document.getElementById("links1");
+    var linksDiv2 = document.getElementById("links2");
+    var linksDiv3 = document.getElementById("links3");
+    var linksDiv4 = document.getElementById("links4");
+    var linksDiv5 = document.getElementById("links5");
+    var linksDiv6 = document.getElementById("links6");
+    var linksDiv7 = document.getElementById("links7");
+    var linksDiv8 = document.getElementById("links8");
+    var linksDiv9 = document.getElementById("links9");
+    var toggleSwitch1 = document.getElementById("toggleSwitch1");
+    var toggleSwitch2 = document.getElementById("toggleSwitch2");
+    var toggleSwitch3 = document.getElementById("toggleSwitch3");
+    var toggleSwitch4 = document.getElementById("toggleSwitch4");
+    var toggleSwitch5 = document.getElementById("toggleSwitch5");
+    var toggleSwitch6 = document.getElementById("toggleSwitch6");
+    var toggleSwitch7 = document.getElementById("toggleSwitch7");
+    var toggleSwitch8 = document.getElementById("toggleSwitch8");
+    var toggleSwitch9 = document.getElementById("toggleSwitch9");
+
+    if ((toggleSwitch1.checked && toggleSwitch2.checked) || 
+    (toggleSwitch1.checked && toggleSwitch3.checked) || 
+    (toggleSwitch2.checked && toggleSwitch3.checked)) {
+    linksDiv1.style.display = "block";
+    linksDiv1.classList.add("visible");
+    } else {
+      linksDiv1.classList.remove("visible");
+    }
+
+    if ((toggleSwitch4.checked && toggleSwitch5.checked) || 
+        (toggleSwitch4.checked && toggleSwitch6.checked) || 
+        (toggleSwitch5.checked && toggleSwitch6.checked)) {
+      linksDiv2.style.display = "block";
+      linksDiv2.classList.add("visible");
+    } else {
+      linksDiv2.classList.remove("visible");
+    }
+
+    if ((toggleSwitch7.checked && toggleSwitch8.checked) || 
+        (toggleSwitch7.checked && toggleSwitch9.checked) || 
+        (toggleSwitch8.checked && toggleSwitch9.checked)) {
+      linksDiv3.style.display = "block";
+      linksDiv3.classList.add("visible");
+    } else {
+      linksDiv3.classList.remove("visible");
+    }
+  }
+
+  // Function that scrolls down the page when the button is pressed
+  function scrollToSection(sectionId) { 
+    var section = document.getElementById(sectionId); 
+    section.scrollIntoView({ behavior: 'smooth' }); 
+  } 
+  // Function that displays the hamburger menu when pressed
+  function toggleMobileMenu() {
       var mobileMenu = document.getElementById("mobileMenu");
       if (mobileMenu.style.display === "block") {
         mobileMenu.style.display = "none";
@@ -19,13 +74,12 @@
   </script>
 </head>
 <body>
-  
   <!-- Navigation -->
   <nav class="navbar navbar-expand-sm bg-1 navbar-dark"> 
     <div class="d-none d-sm-block container-fluid">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link active" href="index.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="hydration-sleep.html">Hydration and Sleep</a>
@@ -34,7 +88,7 @@
           <a class="nav-link" href="banter-bullying.html">Banter Not Bullying</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="online-etiquette.html">Online Etiquette</a>
+          <a class="nav-link" href="online-etiquette.html">Online Etiquette</a>
         </li>
       </ul>
     </div>
@@ -52,7 +106,7 @@
   <div id="mobileMenu" class="container-fluid bg-1 d-sm-none navbar-dark" style="display: none;">
     <ul class="navbar-nav mobile-menu">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="#">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="hydration-sleep.html">Hydration and Sleep</a>
@@ -61,56 +115,158 @@
         <a class="nav-link" href="banter-bullying.html">Banter Not Bullying</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="online-etiquette.html">Online Etiquette</a>
+        <a class="nav-link" href="online-etiquette.html">Online Etiquette</a>
       </li>
     </ul>
   </div>
 
+  <!-- Header / Title -->
   <div class="parallax container-fluid text-white" style="background-image: url('images/background-tiny.png'); background-position: center; background-size: cover;">
+    
     <div class="p-5 container text-center">
-      <h1 class="display-5">ONLINE</h1>
-      <h3>-</h3>
-      <h1 class="display-5">ETIQUETTE</h1>
+      <h1 class="display-5">LEVEL UP</h1>
+      <h3>your</h3>
+      <h1 class="display-5">DIGITAL WELLBEING</h1>
+    </div>
+    
+    <div class="row text-center justify-content-center d-flex align-items-center p-3">
+
+      <div class="col-sm-3 text-center">
+        <img src="images/shield-tiny.png" class="img-fluid" style="height:10em;" alt="Netsafe Logo">
+      </div>
+      <div class="col-sm-1">
+        <h1>X</h1>
+      </div>
+      <div class="col-sm-3 text-center">
+        <img src="images/nz-esports-tiny.png" class="img-fluid" style="height: 10em;" alt="NZ Esports Logo">
+      </div>
+    </div>
+
+    <div class="p-2 container text-center text-black pb-5">
+      <h1><a class="btn btn-light btn-lg" role="button" aria-pressed="true" onclick="scrollToSection('formSection')">LEARN MORE</a></h1>
     </div>
   </div>
-  
-  <div class="parallax container-fluid" style="background-image: url('images/paper-tiny.jpg'); background-position: center; background-size: cover;">
 
-    <div class="container pt-5 p-4 text-center">
-      <h1 class="display-4">What's Online Etiquette?</h1>
-      <div class="d-flex align-items-center justify-content-center">
-        <p class="col-md-9 mt-5 rounded text-white p-3" style="background-color: rgba(0, 0, 0, 0.65);">Understanding and practicing good online etiquette is essential for fostering a positive and respectful digital community. By adhering to principles of respect, kindness, and empathy, we can create a safer and more enjoyable online environment for everyone.</p>
+  <!-- questionnaire form -->
+
+  <div id="formSection" class="parallax container-fluid" style="background-image: url('images/paper-tiny.jpg'); background-position: center; background-size: cover;">
+
+    <div class="container pt-5 p-2 text-center">
+      <h1 class="display-4">Digital Wellbeing Form</h1>
+    </div>
+    
+    <!-- Switches that determine what links are displayed -->
+
+    <div class="container-fluid text-center justify-content-center d-flex align-items-center p-3">
+      <div class="container">
+        
+        <p class="rounded text-white p-3 mt-3 mb-5" style="background-color: rgba(0, 0, 0, 0.65);">Our form is crafted to personalize your experience by aligning with your unique needs and preferences. By answering questions related to hydration and sleep, fostering banter not bullying, and practicing online etiquette, 
+          you can tailor your exploration to what resonates most with you. Simply toggle the switches that reflect your experiences and interests, and relevant links will dynamically appear below. By having three switches of a category selected, a link will appear containing information related to your answers.</p>
+          
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
+              <p class="text-white"><label class="form-check-label" for="toggleSwitch1">Do you struggle to fall asleep at night?</label></p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch1" onchange="toggleLinks(1)">
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
+              <p class="text-white"><label class="form-check-label" for="toggleSwitch2">Are you often fatigued or lacking energy during the day?</label></p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch2" onchange="toggleLinks(2)">
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
+              <p class="text-white"><label class="form-check-label" for="toggleSwitch3">Do you find it difficult to maintain a consistent sleep schedule?</label></p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch3" onchange="toggleLinks(3)">
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
+              <p class="text-white"><label class="form-check-label" for="toggleSwitch4">Have you ever experienced discomfort or negativity from online interactions?</label></p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch4" onchange="toggleLinks(4)">
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
+              <p class="text-white"><label class="form-check-label" for="toggleSwitch5">Do you feel uncertain about how to handle online disagreements or conflicts?</label></p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch5" onchange="toggleLinks(5)">
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
+              <p class="text-white"><label class="form-check-label" for="toggleSwitch6">Are you interested in promoting positivity and inclusivity in digital communities?</label></p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch6" onchange="toggleLinks(6)">
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
+              <p class="text-white"><label class="form-check-label" for="toggleSwitch7">Would you like to improve your online presence and professionalism?</label></p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch7" onchange="toggleLinks(7)">
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
+              <p class="text-white"><label class="form-check-label" for="toggleSwitch8">Are you unsure about the appropriate way to engage with others online?</label></p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch8" onchange="toggleLinks(8)">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-4">
+          <div class="col text-center">
+            <div class="rounded p-3" style="background-color: rgba(0, 0, 0, 0.65);">
+              <p class="text-white"><label class="form-check-label" for="toggleSwitch9">Do you find it hard to communicate effectively in online forums or social media?</label></p>
+              <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                <input class="form-check-input" type="checkbox" id="toggleSwitch9" onchange="toggleLinks(9)">
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
     
-    <div class="p-2">
-      <div class="container text-white p-3 rounded" style="background-color: rgba(0, 0, 0, 0.65);">
-        <div class="row text-center justify-content-center d-flex align-items-center">
-          <div class="col-md-4 text-center">
-            <img src="images/phone-tiny.png" class="img-fluid rounded" alt="Online Etiquette Image" style="height: 20em;">
-          </div>
-          <div class="col-md-6">
-            <p class="lead">Welcome to the digital age, where the world is at our fingertips, and connections are made with just a click. As teenagers, it's crucial to understand and practice good online etiquette to navigate the vast expanse of the internet responsibly. Online etiquette, also known as netiquette, refers to the guidelines and norms that govern our behavior in the online realm. Just like in the physical world, showing respect, kindness, and consideration towards others is paramount. Whether you're chatting with friends, participating in online forums, or sharing content on social media, practicing good online etiquette ensures a positive and harmonious digital experience for all.</p>
-          </div>
-        </div>
+    <!-- Links to pages displayed as form results -->
+
+  <div class="row text-center justify-content-center d-flex align-items-center p-4">
+    <div class="col-sm-2 p-1">
+      <div id="links1" class="fade-in">
+        <a href="hydration-sleep.html" class="btn btn-dark btn-lg visible">Hydration and Sleep</a>
       </div>
     </div>
-  
-    <div class="p-4">
-      <div class="container text-white p-3 rounded" style="background-color: rgba(0, 0, 0, 0.65);">
-        <div class="row text-center justify-content-center d-flex align-items-center">
-          <div class="col-md-6 text-center">
-            <p class="lead">So, what does good online etiquette entail? Firstly, be mindful of your tone and language. Avoid using offensive or derogatory language that may hurt or offend others. Secondly, respect people's privacy and personal boundaries. Think twice before sharing someone else's personal information or photos without their consent. Thirdly, practice empathy and understanding. Remember that there are real people behind the screens, each with their own thoughts, feelings, and experiences. Lastly, be a positive digital citizen by contributing to a supportive and inclusive online community. By practicing good online etiquette, we can create a digital world where kindness, respect, and empathy reign supreme.</p>
-          </div>
-          <div class="col-md-4">
-            <img src="images/computer-tiny.png" class="img-fluid rounded" alt="Online Etiquette Image" style="height: 20em;">
-          </div>
-        </div>
+    <div class="col-sm-2 p-1">
+      <div id="links2" class="fade-in">
+        <a href="banter-bullying.html" class="btn btn-dark btn-lg visible">Banter Not Bullying</a>
       </div>
     </div>
-  
+    <div class="col-sm-2 p-1">
+      <div id="links3" class="fade-in">
+        <a href="online-etiquette.html" class="btn btn-dark btn-lg visible">Online Etiquette</a>
+      </div>
+    </div>
   </div>
-  
+    
+  </div>
+
+  <!-- Footer -->
+
   <div class="text-center p-2 bg-1 text-white">
     <h5>Aidan Gould-Pretorius</h5>
   </div>
